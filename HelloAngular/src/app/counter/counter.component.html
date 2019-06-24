@@ -1,0 +1,3 @@
+<button on-click="increment()">{{count}}</button>
+<button (click)="count = count + step">{{count}}</button>
+<input [value]="step" (input)="setStep($event.target.value)">

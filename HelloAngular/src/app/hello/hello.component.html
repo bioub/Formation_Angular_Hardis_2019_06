@@ -1,0 +1,19 @@
+<p>hello {{name}}!</p>
+<p>
+  hello <span bind-innerText="name"></span>
+</p>
+<p>
+  hello <span [textContent]="name"></span>
+</p>
+<p>
+  hello <input [value]="name" />
+</p>
+<p>
+  hello <input [value]="name" [autofocus]="true" />
+</p>
+<p>
+  hello <input value="name" />
+</p>
+<p>
+  hello <input [value]="'name'" />
+</p>
