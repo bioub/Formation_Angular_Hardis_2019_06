@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "HelloAngular"
+		},
+		{
+			"path": "TodoList"
 		}
 	],
 	"settings": {}

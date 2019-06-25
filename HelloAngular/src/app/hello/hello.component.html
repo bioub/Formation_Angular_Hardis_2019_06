@@ -6,10 +6,10 @@
   hello <span [textContent]="name"></span>
 </p>
 <p>
-  hello <input [value]="name" />
+  hello <input [value]="name + '!!!'" />
 </p>
 <p>
-  hello <input [value]="name" [autofocus]="true" />
+  hello <input [value]="name" [autofocus]="name.length > 3" />
 </p>
 <p>
   hello <input value="name" />
