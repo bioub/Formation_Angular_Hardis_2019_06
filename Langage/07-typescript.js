@@ -1,17 +1,16 @@
 "use strict";
 function hello(name) {
-    return "Hello my name is " + name.toUpperCase();
+    return `Hello my name is ${name.toUpperCase()}`;
 }
-var firstNames = ['Jean', 'Eric'];
-firstNames.forEach(function (firstName) {
+const firstNames = ['Jean', 'Eric'];
+firstNames.forEach((firstName) => {
     console.log(hello(firstName));
 });
-var Voiture = /** @class */ (function () {
-    function Voiture(marque) {
+class Voiture {
+    constructor(marque) {
         this.marque = marque;
     }
-    Voiture.prototype.demarrer = function () {
-        console.log("Je d\u00E9marre la " + this.marque);
-    };
-    return Voiture;
-}());
+    demarrer() {
+        console.log(`Je démarre la ${this.marque}`);
+    }
+}

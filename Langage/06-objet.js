@@ -17,7 +17,7 @@ console.log(typeof console); // object -> console.log
 // un objet JS est un système clé/valeur extensible
 
 console.log(typeof Math.sum); // undefined
-Math.sum = (a, b) => a + b;
+Math.sum = (a, b) => a + b; // MAUVAISE PRATIQUE
 console.log(typeof Math.sum); // function
 console.log(Math.sum(1, 2)); // 3
 
@@ -27,6 +27,26 @@ console.log(Math.sum(1, 2)); // 3
 
 delete Math.sum;
 console.log(typeof Math.sum); // undefined
+
+// BONNE PRATIQUE (ne pas étendre les normes)
+/** @type {Math} */
+const MyMath = {
+  
+};
+
+Object.defineProperty(MyMath, 'sum', {
+  value: (a, b) => a + b,
+  enumerable: true,
+});
+
+// MyMath.sum = (a, b) => a + b;
+// MyMath['sum'] = (a, b) => a + b;
+
+for (const key of Object.getOwnPropertyNames(Math)) {
+  MyMath[key] = Math[key];
+}
+
+console.log(MyMath.random());
 
 // En TypeScript modèle hybride
 

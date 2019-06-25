@@ -11,3 +11,8 @@
   [selected]="selectedFirstName"
   (selectedChange)="selectedFirstName = $event"
 ></app-dropdown> 
+
+<app-dropdown
+  [items]="firstNames"
+  [(selected)]="selectedFirstName"
+></app-dropdown> 

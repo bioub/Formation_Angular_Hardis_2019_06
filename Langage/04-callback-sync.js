@@ -10,7 +10,7 @@ for (let i = 0; i < firstNames.length; i++) {
   }
 }
 
-// Paradigme Fonctionnel (fonctions)
+// Paradigme Fonctionnel (fonctions) (ES5)
 firstNames.filter((firstName) => firstName.length === 4)
           .map((firstName) => firstName.toUpperCase())
           .forEach((firstName) => console.log(firstName));
