@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'ab-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AddressBook';
+  // show = true;
+
+  // @HostListener('document:click')
+  // toggleClock() {
+  //   this.show = !this.show;
+  // }
 }
