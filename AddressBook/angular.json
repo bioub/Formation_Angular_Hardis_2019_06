@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TodoList": {
+    "AddressBook": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "todo",
+      "prefix": "ab",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TodoList",
+            "outputPath": "dist/AddressBook",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.scss"
-              //,"node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
@@ -63,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TodoList:build"
+            "browserTarget": "AddressBook:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TodoList:build:production"
+              "browserTarget": "AddressBook:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TodoList:build"
+            "browserTarget": "AddressBook:build"
           }
         },
         "test": {
@@ -111,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TodoList:serve"
+            "devServerTarget": "AddressBook:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TodoList:serve:production"
+              "devServerTarget": "AddressBook:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "TodoList"
+  "defaultProject": "AddressBook"
 }

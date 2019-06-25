@@ -1,0 +1,9 @@
+@import '../../theme.scss';
+
+$btnWidth: 200px !default;
+
+.input-group-append {
+  .btn {
+    width: $btnWidth !important;
+  }
+}

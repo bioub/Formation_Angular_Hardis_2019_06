@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
   selector: 'todo-root',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos = [{
+  todos: Todo[] = [{
     id: 123,
     text: 'Acheter du pain',
     completed: true,
@@ -16,11 +17,16 @@ export class AppComponent {
     completed: false,
   }]
 
-  addTodo(text) {
+  addTodo(text: string) {
     this.todos.push({
       id: Math.random(),
       text, // text: text
       completed: false,
     });
+  }
+
+  deleteTodo(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    this.todos.splice(index, 1);
   }
 }

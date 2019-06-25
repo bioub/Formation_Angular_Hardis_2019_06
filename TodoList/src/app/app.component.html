@@ -1,2 +1,2 @@
 <todo-form (textChange)="addTodo($event)"></todo-form>
-<todo-list [items]="todos"></todo-list>
+<todo-list [items]="todos" (remove)="deleteTodo($event)"></todo-list>

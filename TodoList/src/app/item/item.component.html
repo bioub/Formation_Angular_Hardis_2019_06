@@ -1,1 +1,6 @@
-<div>{{todo.text}}</div>
+<div class="input-group mt-2">
+  <input class="form-control" [value]="todo.text | uppercase">
+  <div class="input-group-append">
+      <button class="btn btn-danger" (click)="deleteTodo(todo)">-</button>
+  </div>
+</div>

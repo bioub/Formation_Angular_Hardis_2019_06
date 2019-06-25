@@ -1,4 +1,8 @@
 <form (submit)="addTodo($event)">
-  <input (input)="text = $event.target.value">
-  <button>+</button>
+  <div class="input-group mt-2">
+    <input class="form-control" (input)="text = $event.target.value" />
+    <div class="input-group-append">
+      <button class="btn btn-primary">+</button>
+    </div>
+  </div>
 </form>
