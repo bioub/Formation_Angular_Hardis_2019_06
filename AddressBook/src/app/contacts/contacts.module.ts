@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { ContactComponent } from './contact/contact.component';
@@ -14,6 +13,13 @@ import { SharedModule } from '../shared/shared.module';
     ContactListComponent,
     ContactShowComponent,
     ContactAddComponent
+  ],
+  providers: [
+  // {
+  //   provide: ContactService,
+  //   useClass: ContactService
+  // }
+  //  ContactService
   ],
   imports: [SharedModule, ContactsRoutingModule]
 })
