@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
 import { Todo } from '../todo';
 
 @Component({
@@ -6,7 +6,8 @@ import { Todo } from '../todo';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnInit, DoCheck {
+
 
   @Input() todo = new Todo();
   @Output() remove = new EventEmitter<Todo>();
@@ -18,6 +19,10 @@ export class ItemComponent implements OnInit {
 
   deleteTodo(todo: Todo) {
     this.remove.emit(todo);
+  }
+
+  ngDoCheck(): void {
+    console.log('item');
   }
 
 }

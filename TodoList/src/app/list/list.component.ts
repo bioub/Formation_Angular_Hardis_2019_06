@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Todo } from '../todo';
 
 @Component({
   selector: 'todo-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
 
@@ -18,5 +19,9 @@ export class ListComponent implements OnInit {
 
   deleteTodo(todo: Todo) {
     this.remove.emit(todo);
+  }
+
+  trackByFct(item: Todo) {
+    return item.id;
   }
 }

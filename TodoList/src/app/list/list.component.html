@@ -1,1 +1,5 @@
-<todo-item *ngFor="let item of items" [todo]="item" (remove)="deleteTodo($event)"></todo-item>
+<todo-item
+  *ngFor="let item of items; trackBy: trackByFct"
+  [todo]="item"
+  (remove)="deleteTodo($event)"
+></todo-item>
