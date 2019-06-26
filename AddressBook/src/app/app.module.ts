@@ -7,6 +7,7 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule, // à importer une seule ici pour que httpClient soit un singleton
   ],
   providers: [],
   bootstrap: [AppComponent]

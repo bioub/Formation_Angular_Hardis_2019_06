@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'ab-contact-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
+  contacts: any[];
+
+  constructor(protected httpClient: HttpClient) { }
 
   ngOnInit() {
+    // GET https://jsonplaceholder.typicode.com/users
+    this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/users')
+      .subscribe((contacts) => {
+        this.contacts = contacts;
+      });
   }
 
 }

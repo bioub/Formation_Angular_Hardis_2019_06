@@ -1,10 +1,14 @@
-<div class="list-group">
-  <a [routerLink]="['1']" routerLinkActive="active" class="list-group-item list-group-item-action ">
-    Cras justo odio
+<div *ngIf="!contacts">Chargement...</div>
+
+<div *ngIf="contacts" class="list-group">
+  <a
+    *ngFor="let contact of contacts"
+    [routerLink]="[contact.id]"
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action"
+  >
+    {{ contact.name }}
   </a>
-  <a [routerLink]="['2']" routerLinkActive="active" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-  <a [routerLink]="['3']" routerLinkActive="active" class="list-group-item list-group-item-action">Morbi leo risus</a>
-  <a [routerLink]="['4']" routerLinkActive="active" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
 </div>
 
 <a [routerLink]="['add']" class="btn btn-primary btn-block mt-3">Ajouter</a>
