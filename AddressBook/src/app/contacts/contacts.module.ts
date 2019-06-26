@@ -6,12 +6,15 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactShowComponent } from './contact-show/contact-show.component';
 import { ContactAddComponent } from './contact-add/contact-add.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [ContactComponent, ContactListComponent, ContactShowComponent, ContactAddComponent],
-  imports: [
-    CommonModule,
-    ContactsRoutingModule
-  ]
+  declarations: [
+    ContactComponent,
+    ContactListComponent,
+    ContactShowComponent,
+    ContactAddComponent
+  ],
+  imports: [SharedModule, ContactsRoutingModule]
 })
-export class ContactsModule { }
+export class ContactsModule {}

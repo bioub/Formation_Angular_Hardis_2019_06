@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './core/home/home.component';
-import { ContactsModule } from './contacts/contacts.module';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    ContactsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
